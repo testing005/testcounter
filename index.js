@@ -16,11 +16,12 @@ app.listen(process.env.PORT||6000,function(){
 
 app.get("/countdown",function(req,res){
      var state=req.param('state');
-     res.writeHead(200,{"Content-Type":"text/html","Access-Control-Allow-Credentials": "true"});
+     res.writeHead(200,{"Content-Type":"text/html"});
      if(state=="start")
      	{    res.write("started");
              res.end();
      		var timer=setInterval(function(){
+        io.set("origins","http://localhost:8080/");
      			io.emit("timer",counter);
      			counter--;
      			if(counter==0){
