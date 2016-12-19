@@ -1,6 +1,21 @@
+
+
 {
-  "name": "socket-timer",
-  "version": "0.0.1",
-  "description": "socket-timer",
-  "dependencies": {}
+   "name":"socket-timer",
+   "version":"0.2.5",
+   "description":"socket-timer",
+   "engines":{
+   	"node":"5.9.1"
+   },
+   "main":"index.js",
+   "scripts":{
+   	   "start":"node index.js"
+   },
+   "dependencies":{
+     "express":"4.10.2",
+     "socket.io":"1.7.2"
+   },
+
+   "keywords":["socket","timer"]
+   
 }
