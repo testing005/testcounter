@@ -4,12 +4,12 @@ var app=new express();
 var http=require('http').Server(app);
 var io=require("socket.io")(http);
 var counter=30;
-/*app.listen(process.env.port||6000,function(){
- console.log("listening on port 6000");
-});*/
-http.listen(5000,function(){
+app.listen(process.env.port||6000,function(){
  console.log("listening on port 6000");
 });
+/*http.listen(5000,function(){
+ console.log("listening on port 6000");
+});*/
 
 
 
