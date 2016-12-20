@@ -14,7 +14,7 @@ app.listen(process.env.PORT||6000,function(){
 
 
 
-pp.get("/countdown",function(req,res){
+app.get("/countdown",function(req,res){
      var state=req.param('state');
      res.writeHead(200,{"Content-Type":"text/html"});
      if(state=="start")
