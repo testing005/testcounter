@@ -16,7 +16,9 @@ app.listen(process.env.PORT||6000,function(){
 
 app.get("/countdown",function(req,res){
      var state=req.param('state');
-     res.writeHead(200,{"Content-Type":"text/html","Access-Control-Allow-Origin": "http://localhost:8080"});
+     res.writeHead(200,{"Content-Type":"application/octet-stream",
+                        "Access-Control-Allow-Origin": "http://localhost:8080",
+                       "Access-Control-Allow-Credentials": "true"});
      if(state=="start")
      	{    res.write("started");
              
