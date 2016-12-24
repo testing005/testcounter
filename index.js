@@ -15,11 +15,11 @@ var server  = app.listen(process.env.PORT||6000,function(){
  console.log("listening on port 6000");
 });
 var io      = require('socket.io').listen(server);
-
+var counter=30;
 
 app.use(function(req,res,next){
  res.setHeader('Access-Control-Allow-Origin','http://localhost:8080');
- res.setHeader('Access-Control-Allow-Method','GET,POST,OPTIONS,PUT,PATCH,DELETE');
+ //res.setHeader('Access-Control-Allow-Method','GET,POST,OPTIONS,PUT,PATCH,DELETE');
  res.setHeader('Access-Control-Allow-Headers','X-Requested-With,content-type');
  res.setHeader('Access-Control-Allow-Credentials','true');
  next();
