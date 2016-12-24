@@ -12,13 +12,17 @@ app.listen(process.env.PORT||6000,function(){
 });*/
 
 
+app.use(function(req,res,next){
+ res.setHeader('Access-Control-Allow-Origin','*');
+ res.setHeadert('Access-Control-Allow-Method','GET,POST,OPTIONS,PUT,PATCH,DELETE');
+ res.setHeader('Access-Control-Allow-Headers','X-Requested-With,content-type');
+ next();
+})
 
 
 app.get("/countdown",function(req,res){
      var state=req.param('state');
-     res.writeHead(200,{"Content-Type":"application/octet-stream",
-                        "Access-Control-Allow-Origin": "http://localhost:8080",
-                       "Access-Control-Allow-Credentials": "true"});
+     res.writeHead(200,{"Content-Type":"application/octet-stream"});
      if(state=="start")
      	{    res.write("started");
              
