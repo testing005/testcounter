@@ -1,15 +1,20 @@
 var express=require('express');
 
-var app=new express();
+/*var app=new express();
 var http=require('http').Server(app);
 var io=require("socket.io")(http);
 var counter=30;
 app.listen(process.env.PORT||6000,function(){
  console.log("listening on port 6000");
 });
-/*http.listen(5000,function(){
+http.listen(5000,function(){
  console.log("listening on port 6000");
 });*/
+var app     = express();
+var server  = app.listen(process.env.PORT||6000,function(){
+ console.log("listening on port 6000");
+});
+var io      = require('socket.io').listen(server);
 
 
 app.use(function(req,res,next){
